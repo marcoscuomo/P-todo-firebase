@@ -1,0 +1,10 @@
+.main {
+  background: var(--light-grey);
+  width: 800px;
+  margin: 100px auto;
+  padding: 30px;
+}
+
+.main h2 {
+  color: var(--blue)
+}
