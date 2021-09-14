@@ -1,13 +1,25 @@
+import Todos from '../../core/Todo'
+
 import styles from './styles.module.css';
 
-export default function Todo() {
+interface ITodosProps {
+  todos: Todos[]
+}
+
+export default function Todo({todos}: ITodosProps) {
+
+  function renderTodos() {
+    return todos.map(todo => (
+      <li key={todo.id}>
+        {todo.title}
+      </li>
+    ))
+  }
+
   return(
     <div className={styles.container}>
       <ul>
-        <li>Limpar a casa</li>
-        <li>Limpar o quintal</li>
-        <li>Arrumar o carro</li>
-        <li>Fazer janta</li>
+        {renderTodos()}
       </ul>
     </div>
   )
