@@ -11,4 +11,26 @@
   /* border-bottom-right-radius: 20px;
   border-top-right-radius: 20px; */
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+
+.action {
+  display: flex;
+  width: 50px;
+}
+
+.action svg:first-child {
+  margin-right: 10px;
+  color: darkslateblue;
+}
+
+
+.action svg:last-child {
+  color: darkred;
+}
+
+.noTodoFound {
+  margin-top: 10px;
 }

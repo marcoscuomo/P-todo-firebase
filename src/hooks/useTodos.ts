@@ -1,16 +1,36 @@
+import { useEffect, useState } from "react";
+import CollectionTodo from "../backend/collections/CollectionTodo";
+import ITodoRepository from "../core/interfaces/ITodoRepository";
+
 import Todo from "../core/Todo";
 
 export default function useTodos() {
-  const todos = [
-    new Todo('Lavar Louça', 'Lavar a louça da janta', false, true, new Date(), '1'),
-    new Todo('Lavar Quintal', 'Lavar a louça da janta', true, true, new Date(), '2'),
-    new Todo('Lavar Jardim', 'Lavar a louça da janta', true, true, new Date(), '3'),
-    new Todo('Lavar Quarto', 'Lavar a louça da janta', false, true, new Date(), '4'),
-    new Todo('Lavar Quarto', 'Lavar a louça da janta', false, false, new Date(), '5'),
-    
-  ]
+  
+  const repository: ITodoRepository = new CollectionTodo()
+
+  const [todo, setTodo] = useState<Todo>()
+  const [todos, setTodos] = useState<Todo[]>([])
+  const [showTodos, setShowTodos] = useState<boolean>(false);
+
+  useEffect(listAll, [])
+
+  function listAll(){
+    //TODO: Mudar para async await
+    repository.listAll().then(todos => {
+      setTodos(todos)
+      todos.length > 1 ? setShowTodos(true) : setShowTodos(false)
+    })
+  }
+
+  async function saveTodo(todo: Todo) {
+    await repository.save(todo)
+  }
 
   return {
-    todos
+    saveTodo,
+    listAll,
+    todo,
+    todos,
+    showTodos
   }
 }

@@ -3,23 +3,24 @@ export default class Todo {
   #title: string;
   #description: string;
   #isCompleted: boolean;
-  #isActive: boolean;
   #createdAt: Date;
 
   constructor(
     title: string, 
-    description: string, 
+    description: string,
+    id: string = '', 
     isCompleted: boolean = false, 
-    isActive: boolean = true, 
-    createdAt: Date = new Date(),
-    id: string = '',
+    createdAt: Date = new Date()
   ) {
     this.#id = id,
     this.#title = title,
     this.#description = description,
     this.#isCompleted = isCompleted,
-    this.#isActive = isActive,
     this.#createdAt = createdAt
+  }
+
+  static todoEmpty() {
+    return new Todo('', '');
   }
 
   get id() {
@@ -36,10 +37,6 @@ export default class Todo {
 
   get isCompleted() {
     return this.#isCompleted
-  }
-
-  get isActive() {
-    return this.#isActive
   }
 
   get createdAt() {
