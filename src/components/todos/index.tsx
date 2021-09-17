@@ -27,6 +27,7 @@ export default function Todo({todos, showTodos}: ITodosProps) {
   }
 
   return(
+  
     <div className={styles.container}>
       {
         showTodos ? (

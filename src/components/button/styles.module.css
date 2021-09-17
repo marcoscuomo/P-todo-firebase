@@ -4,4 +4,8 @@
   border: none;
   background: lightcoral;
   color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

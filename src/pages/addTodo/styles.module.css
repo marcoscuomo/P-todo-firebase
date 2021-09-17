@@ -1,0 +1,23 @@
+main.container {
+  background: var(--light-grey);
+  width: 800px;
+  margin: 100px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main.container form { 
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+main.container form h2 {
+  margin: 20px 0;
+}
+
+main.container form input{ 
+  margin-bottom: 10px;
+}

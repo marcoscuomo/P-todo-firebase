@@ -36,6 +36,62 @@ li {
   list-style: none;
 }
 
+/* Buttons */
+a.btn {
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a.btn.default {
+  background: brown;
+  color: #fff;
+
+  transition: all ease 0.5s;
+}
+
+a.btn.default:hover {
+  background: rgb(102, 50, 50);
+}
+
+a.btn.add {
+  background: darkorchid;
+  color: #fff;
+
+  transition: all ease 0.5s;
+}
+
+a.btn.add:hover {
+  background: rgb(108, 66, 129);
+}
+
+a.btn.back {
+  background: darkgreen;
+  color: #fff;
+
+  transition: all ease 0.5s;
+}
+
+a.btn.back:hover {
+  background: rgb(23, 75, 23);
+}
+
+a.btn.create {
+  background: darkslategrey;
+  color: #fff;
+
+  transition: all ease 0.5s;
+}
+
+a.btn.create:hover {
+  background: rgb(34, 48, 48);
+}
+
 @media(max-width: 1080px) {
   html {
     font-size: 93.75%;

@@ -19,6 +19,7 @@ export default function useTodos() {
     repository.listAll().then(todos => {
       setTodos(todos)
       todos.length > 1 ? setShowTodos(true) : setShowTodos(false)
+      console.log(showTodos)
     })
   }
 

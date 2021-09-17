@@ -1,15 +1,17 @@
 import { ButtonHTMLAttributes } from "react";
 
 import styles from './styles.module.css';
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IButtonProps  {
   children: React.ReactNode
+  type: string
 }
 
-export default function Button({ color, children, ...rest }: IButtonProps) {
-  
+export default function Button({ type, children, ...rest }: IButtonProps) {
+  const classBtn = `btn ${type}`
+
   return(
-    <button className={styles.btnAdd} {...rest}>
+    <a className={classBtn} {...rest}>
       {children}
-    </button>
+    </a>
   )
 }
