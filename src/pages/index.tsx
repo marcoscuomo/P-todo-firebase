@@ -14,7 +14,7 @@ export default function Home() {
 
   return(
     <>
-      <Head>
+      <Head> 
         <title>Todo with Firebase - Home</title>
       </Head>
       <main className={styles.main}>
@@ -25,7 +25,10 @@ export default function Home() {
           </Link>
         </div>
 
-        <Todos todos={todos} showTodos={showTodos} />
+        <Todos 
+          todos={todos} 
+          showTodos={showTodos} 
+        />
       </main>
     </>
 
