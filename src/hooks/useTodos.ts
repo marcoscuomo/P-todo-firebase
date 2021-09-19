@@ -19,7 +19,6 @@ export default function useTodos() {
     repository.listAll().then(todos => {
       setTodos(todos)
       todos.length > 1 ? setShowTodos(true) : setShowTodos(false)
-      console.log(showTodos)
     })
   }
 
@@ -27,11 +26,18 @@ export default function useTodos() {
     await repository.save(todo)
   }
 
+  async function deleteTodo(todo: Todo) {
+    await repository.delete(todo)
+    listAll()
+  }
+
   return {
     saveTodo,
     listAll,
     todo,
+    setTodo,
     todos,
-    showTodos
+    showTodos,
+    deleteTodo
   }
 }

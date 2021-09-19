@@ -1,26 +1,31 @@
 import Todos from '../../core/Todo'
-import {IconTrash, IconEdit} from '../../components/Icons';
-import styles from './styles.module.css';
+import {IconTrash, IconEdit} from '../../components/Icons'
+import styles from './styles.module.css'
 
 interface ITodosProps {
   todos: Todos[],
-  showTodos: boolean
+  showTodos: boolean,
+  deleteTodo: (todo: Todos) => void
 }
 
-export default function Todo({todos, showTodos}: ITodosProps) {
-
+export default function Todo({todos, showTodos, deleteTodo}: ITodosProps) {
+  
+  async function handleDelete(todo: Todos) {
+    await deleteTodo(todo)
+  }
+  
   function renderTodos() {
 
-    function teste() {
-      console.log('teste')
-    }
-
     return todos.map(todo => (
-      <li key={todo.id} onClick={() => teste()}>
+      <li key={todo.id}>
         <p>{todo.title}</p>
         <div className={styles.action}>
-          {IconEdit}
-          {IconTrash}
+          <a href="">
+            {IconEdit}
+          </a>
+          <a onClick={() => handleDelete(todo)}>
+            {IconTrash}
+          </a>
         </div>
       </li>
     ))

@@ -18,17 +18,23 @@
 
 .action {
   display: flex;
-  width: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
 }
 
-.action svg:first-child {
+.action a:first-child {
   margin-right: 10px;
   color: darkslateblue;
 }
 
 
-.action svg:last-child {
+.action a:last-child {
   color: darkred;
+}
+
+.action a > svg {
+  width: 25px;
 }
 
 .noTodoFound {

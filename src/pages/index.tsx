@@ -10,7 +10,7 @@ import styles from './home.module.css';
 
 export default function Home() {
 
-  const { todos, todo, listAll, saveTodo, showTodos } = useTodos();
+  const { todos, todo, listAll, saveTodo, showTodos, deleteTodo } = useTodos();
 
   return(
     <>
@@ -21,13 +21,14 @@ export default function Home() {
         <div className={styles.main_header}>
           <h2>TODO</h2>
           <Link href='/addTodo'>
-            <Button type='add'> Add  +</Button>
+            <Button typeButton='add'> Add  +</Button>
           </Link>
         </div>
 
         <Todos 
           todos={todos} 
-          showTodos={showTodos} 
+          showTodos={showTodos}
+          deleteTodo={deleteTodo} 
         />
       </main>
     </>
